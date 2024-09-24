@@ -1,5 +1,3 @@
-from xmlrpc.client import boolean
-
 name1 = 'Evgen' # имя
 print(name1)
 
