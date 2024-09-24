@@ -1,11 +1,11 @@
 name1 = 'Evgen' # имя
-print(name1)
+print('Ваше имя: ', name1)
 
 age = 21 # возраст
-print(age)
-print(age + 1)
+print('Ваш возраст: ',age)
+print('Ваш эмоциональный возраст: ', age + 4)
 
-name2 = 'is_student'
-print(name2, name2==name2)
+name2 = 'Is Student'
+print(name2, ':' ,name2==name2)
 
 
