@@ -1,3 +1,5 @@
+print('lesson 2')
+
 print('task1')
 
 print(9**0.5*5)
@@ -14,4 +16,5 @@ print(2*2+2==2*(2+2))
 
 
 print('task4')
-print((float('123.456'))*10)
+print(int(float('123.456')*10)%10)
+
