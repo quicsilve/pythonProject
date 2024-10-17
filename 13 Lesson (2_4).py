@@ -1,11 +1,21 @@
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43]
-not_primes = [4, 6, 8, 9, 10, 12, 14, 16, 18, 20, 22, 24, 26]
-n = 0
-for i in range(len(numbers)):
-    for g in primes:
+primes = []
+not_primes = []
+
+for i in numbers:
+    if i == 1:
+        print(i, "Это ни то ни се")
+        continue
+    is_prime = True
+    for g in range(2, i):
         if i % g == 0:
-            print(g)
-    for j in not_primes:
-        if i//j == 0:
-            print(j)
+            is_prime = False
+ 
+
+    if is_prime:
+        primes.append(i)
+    else:
+        not_primes.append(i)
+
+print(primes)
+print(not_primes)
