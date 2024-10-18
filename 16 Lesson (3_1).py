@@ -31,5 +31,3 @@ print(is_contains("Cocodjambo", ["cocodJamBo", "Hola", "Chickchik"]))
 print(is_contains("Love", ["JamBo", "Hola", "Chickchik"]))
 
 print(calls)
-
-    
