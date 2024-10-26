@@ -1,12 +1,12 @@
 def send_email(message, recipient , sender = "university.help@gmail.com"):
 
-    if ("@" and ".net" or ".ru" or ".com") not in sender and ("@" and ".net" or ".ru" or ".com") not in recipient:
+    if "@" not in sender and (".net"  or ".ru" or ".com") not in sender and "@" not in recipient and (".net" or ".ru" or ".com") not in recipient:
         print("Неверный формат мыла", sender, "и", recipient, "не пойдет")
 
-    if sender == recipient:
+    elif sender == recipient:
         print("Мыло одинаковое, не пойдет")
-        
-    if sender == "university.help@gmail.com":
+
+    elif sender == "university.help@gmail.com":
         print("Ура, все прошло как по маслу, отправилось c", sender, "на", recipient)
     else:
         print("Мыло что-ли поменял? Аж не узнал, но письмо равно отправил на", recipient)
