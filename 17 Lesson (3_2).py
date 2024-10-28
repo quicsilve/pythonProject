@@ -1,6 +1,6 @@
 def send_email(message, recipient , sender = "university.help@gmail.com"):
 
-    if "@" not in sender and (".net"  or ".ru" or ".com") not in sender and "@" not in recipient and (".net" or ".ru" or ".com") not in recipient:
+    if "@" not in recipient or not recipient.endswith((".com", ".ru", ".net")) or "@" not in sender or not sender.endswith((".com", ".ru", ".net")):
         print("Неверный формат мыла", sender, "и", recipient, "не пойдет")
 
     elif sender == recipient:
