@@ -68,7 +68,7 @@ class House():
             
     
     def __lt__(self, other):
-        if isinstance(other, House):
+        if isinstance(other, int) or isinstance(other, House):
             return self.number_of_floors < other.number_of_floors
 
     def __le__(self, other):
