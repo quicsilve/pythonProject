@@ -63,7 +63,7 @@ class House():
 
     def __eq__(self, other):
         if isinstance(other, int):
-            return self.number_of_floors == other.number_of_floors
+            return self.number_of_floors == other
         elif isinstance(other, House):
             return self.number_of_floors == other.number_of_floors
         
@@ -71,7 +71,7 @@ class House():
     
     def __lt__(self, other):
         if isinstance(other, int): 
-            return self.number_of_floors < other.number_of_floors
+            return self.number_of_floors < other
         elif isinstance(other, House):
             return self.number_of_floors < other.number_of_floors
 
