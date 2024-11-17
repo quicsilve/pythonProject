@@ -38,8 +38,10 @@
 # При проверке на существование товара в методе add можно вызывать метод get_products для получения текущих продуктов.
 # Не забывайте закрывать файл вызывая метод close() у объектов файла.
 
+from pprint import pprint
+
 class Product:
-    
+
     def __init__(self, name, weight, category):
         self.name = name
         self.weight = weight
