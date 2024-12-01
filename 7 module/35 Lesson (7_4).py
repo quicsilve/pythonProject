@@ -60,15 +60,15 @@ print('Волшебники данных решили задачи за {0} с'.
 
 
 print(f'Команды решили {score_1} и {score_2} задач.')
-print(f'Результат битвы: {challenge_result2}')
+print(f'Результат битвы: {challenge_result1}')
 print(f'Сегодня было решено {tasks_total} задач, в среднем по {time_avg} секунды на задачу!')
 
 # Тренька
 
 if score_1 > score_2 or score_1 == score_2 and team1_time > team2_time: 
-    result = "Победа команды Мастера кода!"
-elif score_1 < score_2 or score_1 == score_2 and team1_time < team2_time:
     result = "Победа команды Волшебники Данных!"
+elif score_1 < score_2 or score_1 == score_2 and team1_time < team2_time:
+    result = "Победа команды Мастера кода!"
 else:
     result = 'Ничья!'
 
