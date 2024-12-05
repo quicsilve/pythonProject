@@ -23,16 +23,16 @@
 # Обнаружен файл: main.py, Путь: ./main.py, Размер: 111 байт, Время изменения: 11.11.1111 11:11, Родительская директория.
 
 import os
+import time
 
-print('тк: ', os.getcwd())
-os.mkdir()
+directory = os.getcwd()
 
-
-# for root, dirs, files in os.walk(directory):
-#   for file in files:
-#     filepath = ?
-#     filetime = ?
-#     formatted_time = time.strftime("%d.%m.%Y %H:%M", time.localtime(filetime))
-#     filesize = ?
-#     parent_dir = ?
-#     print(f'Обнаружен файл: {file}, Путь: {filepath}, Размер: {filesize} байт, Время изменения: {formatted_time}, Родительская директория: {parent_dir}')
+for root, dirs, files in os.walk(directory):
+  file = [f for f in os.listdir() if os.path.isfile(f)]
+  for file in files:
+    filepath = os.path.join(root, file)
+    filetime = os.path.getmtime(filepath)
+    formatted_time = time.strftime("%d.%m.%Y %H:%M", time.localtime(filetime))
+    filesize =  os.path.getsize(filepath)
+    parent_dir = os.path.dirname(filepath)
+    print(f'Обнаружен файл: {file}, Путь: {filepath}, Размер: {filesize} байт, Время изменения: {formatted_time}, Родительская директория: {parent_dir}')
