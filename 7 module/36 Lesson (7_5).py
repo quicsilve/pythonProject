@@ -26,6 +26,7 @@ import os
 import time
 
 directory = os.getcwd()
+print(directory)
 
 for root, dirs, files in os.walk(directory):
   file = [f for f in os.listdir() if os.path.isfile(f)]
