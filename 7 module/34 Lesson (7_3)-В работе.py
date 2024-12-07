@@ -43,3 +43,11 @@
 # Регистром слов при поиске можно пренебречь. ('teXT' ~ 'text')
 # Решайте задачу последовательно - написав один метод, проверьте результаты его работы.
 
+class WordsFinder:
+    def __init__(self, *file_names):
+        self.file_names = file_names
+
+    def get_all_words(self):
+        all_words = {}
+        with open(test_file.txt, "r", encoding="utf-8"):
+            pass
