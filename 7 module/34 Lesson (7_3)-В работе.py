@@ -43,11 +43,47 @@
 # Регистром слов при поиске можно пренебречь. ('teXT' ~ 'text')
 # Решайте задачу последовательно - написав один метод, проверьте результаты его работы.
 
-class WordsFinder:
+import os
+class WordsFinder():
     def __init__(self, *file_names):
         self.file_names = file_names
 
+    @staticmethod
+    def text_punct(file):
+        symbols = [',', '.', '=', '!', '?', ';', ':', ' - ']
+        text = file.read()
+        text = ''.join([i for i in text.lower() if i not in symbols])
+        words_lst = text.replace(' - ', '').strip().split()
+        return words_lst
+
     def get_all_words(self):
         all_words = {}
-        with open(test_file.txt, "r", encoding="utf-8"):
-            pass
+        for file_name in self.file_names:
+            with open(file_name, encoding='utf8') as file:
+                all_words[file_name] = self.text_punct(file)
+        return all_words
+
+    def find(self, word):
+        result = []
+        word = word.lower()
+        all_words = self.get_all_words()
+        for file in all_words:
+            if word in all_words[file]:
+                index = all_words[file].index(word)
+                result.append({file: index + 1})
+        return result
+
+    def count(self, word):
+        result = []
+        word = word.lower()
+        all_words = self.get_all_words()
+        for file in all_words:
+            if word in all_words[file]:
+                word_qty = all_words[file].count(word)
+                result.append({file: word_qty})
+        return result
+
+finder2 = WordsFinder('test_file.txt')
+print(finder2.get_all_words()) # Все слова
+print(finder2.find('TEXT')) # 3 слово по счёту
+print(finder2.count('teXT')) # 4 слова teXT в тексте всего
