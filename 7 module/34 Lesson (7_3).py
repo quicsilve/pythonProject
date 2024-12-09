@@ -64,24 +64,20 @@ class WordsFinder():
         return all_words
 
     def find(self, word):
-        result = []
         word = word.lower()
         all_words = self.get_all_words()
         for file in all_words:
             if word in all_words[file]:
                 index = all_words[file].index(word)
-                result.append({file: index + 1})
-        return result
+        return {file: index + 1}
 
     def count(self, word):
-        result = []
         word = word.lower()
         all_words = self.get_all_words()
         for file in all_words:
             if word in all_words[file]:
-                word_qty = all_words[file].count(word)
-                result.append({file: word_qty})
-        return result
+                word = all_words[file].count(word)
+        return {file: word}
 
 finder2 = WordsFinder('test_file.txt')
 print(finder2.get_all_words()) # Все слова
