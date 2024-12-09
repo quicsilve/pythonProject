@@ -48,14 +48,14 @@ class Figure:
 
     def __init__(self, color, *sides, filled):
         self.__sides = sides
-        self.__color = color
+        self.__color = list(color)
         self.filled = filled
         if not self.__is_valid_sides(*self.__sides):
-            self.__sides = (1,) * self.SIDES_COUNT  # Если не прошли проверку сторон, то все длины сторон 1
+            self.__sides = (1) * self.SIDES_COUNT  # Если не прошли проверку сторон, то все длины сторон 1
         elif isinstance(self, Cube):
             self.__sides = sides * self.SIDES_COUNT  # Размножаем одну сторону для куба
         if not self.__is_valid_color(*self.__color):
-            self.__color = (255, 0, 0)  # Если не прошли проверку по цвету, то цвет КРАСНЫЙ
+            self.__color = [255, 0, 0]  # Если не прошли проверку по цвету, то цвет КРАСНЫЙ
 
     def get_color(self):
         return self.__color
@@ -83,14 +83,14 @@ class Figure:
         return sides_bool
 
     def get_sides(self):  
-        return self.__sides
+        return list(self.__sides)
 
     def __len__(self):
         return sum(self.__sides)
 
     def set_sides(self, *new_sides):  
         if self.__is_valid_sides(*new_sides):
-            self.__sides = new_sides
+            self.__sides = list(new_sides)
         else:
             print(f'Стороны не удовлетворяют требованиям.')
 
@@ -104,10 +104,10 @@ class Circle(Figure):
 
     def get_square(self):
         from math import pi
-        return pi * self.__radius ** 2
+        return list(pi * self.__radius ** 2)
 
     def get_radius(self):
-        return self.__radius
+        return list(self.__radius)
 
     def set_sides(self, *new_sides):  
         from math import pi
@@ -143,7 +143,7 @@ class Cube(Figure):
 
     def get_volume(self):
         return self.get_sides()[0] ** 3
-    
+
 # Код для проверки:
 circle1 = Circle((200, 200, 100), 10) # (Цвет, стороны)
 cube1 = Cube((222, 35, 130), 6)
